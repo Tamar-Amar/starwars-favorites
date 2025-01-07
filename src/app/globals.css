@@ -1,8 +1,5 @@
-/* globals.css */
-
-/* רקע של כוכבים נעים */
 body {
-  font-family: 'Orbitron', sans-serif; /* פונט עתידני */
+  font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
   background: radial-gradient(circle, #1a1a1a, #000000);
@@ -31,7 +28,6 @@ body::before {
   }
 }
 
-/* כותרת */
 header {
   text-align: center;
   padding: 20px;
@@ -50,7 +46,6 @@ header p {
   color: #ffffff;
 }
 
-/* כפתור */
 .favorite-button {
   background-color: #333333;
   color: white;
@@ -70,7 +65,6 @@ header p {
   transform: scale(1.1);
 }
 
-/* ציר זמן */
 .timeline {
   position: relative;
   padding: 40px 0;
@@ -112,7 +106,6 @@ header p {
   box-shadow: 0px 0px 10px #007bff;
 }
 
-/* שדה חיפוש */
 .search-box {
   position: relative;
   width: 80%;
