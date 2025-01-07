@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Star Wars Favorites
 
-## Getting Started
+## Overview
+This project is a web application built with **Next.js** that displays a list of Star Wars movies fetched from the [SWAPI API](https://swapi.py4e.com/). Users can mark movies as favorites, and their selections are saved in the browser's local storage so they persist across visits.
 
-First, run the development server:
+## Features
+- Display a list of Star Wars movies.
+- Mark or unmark movies as favorites.
+- Favorites persist after refreshing or revisiting the page.
+- Responsive design for various screen sizes.
+- Organized code structure with separation of concerns.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Installation and Setup
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (version 20 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/starwars-favorites.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd starwars-favorites
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+## Project Structure
+```
+starwars-favorites/
+  src/
+    app/
+      page.js          # Main page to display movies
+      [movieId]/       # Dynamic route for movie details
+        page.js        # Details page for a specific movie
+    styles/
+      globals.css      # Global CSS styles
+  .gitignore          # Files and directories ignored by Git
+  README.md           # Project documentation
+  package.json        # Project dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **CSS**: For responsive design and styling.
+- **SWAPI API**: For fetching Star Wars movie data.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Future Improvements
+- Add more details for each movie (characters, planets, etc.).
+- Implement search and filter functionality.
+- Use a database (e.g., MongoDB) for persistent storage instead of local storage.
+- Add animations for better user experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is open-source and available under the [MIT License](https://opensource.org/licenses/MIT).
