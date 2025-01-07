@@ -1,55 +1,137 @@
 /* globals.css */
+
+/* רקע של כוכבים נעים */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Orbitron', sans-serif; /* פונט עתידני */
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background: radial-gradient(circle, #1a1a1a, #000000);
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  z-index: -1;
+  animation: move-stars 50s linear infinite;
+}
+
+@keyframes move-stars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* כותרת */
 header {
-  background-color: #000;
-  color: #fff;
   text-align: center;
-  padding: 20px 10px;
-}
-
-.movies-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
   padding: 20px;
+  border-bottom: 2px solid #00bfff;
 }
 
-.movie-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+header h1 {
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0px 0px 15px #007bff;
 }
 
-.movie-card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ffffff;
 }
 
+/* כפתור */
 .favorite-button {
-  background-color: #007bff;
+  background-color: #333333;
   color: white;
-  border: none;
+  border: 2px solid #007bff;
+  padding: 8px 16px;
   border-radius: 5px;
-  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .favorite-button.favorited {
-  background-color: #28a745;
+  background-color: #ffcc00;
+  color: black;
 }
 
 .favorite-button:hover {
-  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* ציר זמן */
+.timeline {
+  position: relative;
+  padding: 40px 0;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #007bff, #00ffff);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-item:nth-child(odd) {
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+  text-align: right;
+}
+
+.timeline-content {
+  display: inline-block;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  width: 40%;
+  box-shadow: 0px 0px 10px #007bff;
+}
+
+/* שדה חיפוש */
+.search-box {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0px 0px 10px #00ffff;
 }
